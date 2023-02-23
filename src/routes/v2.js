@@ -20,8 +20,8 @@ router.param('model', (req, res, next) => {
 router.get('/:model', bearerAuth, handleGetAll);
 router.get('/:model/:id',bearerAuth, handleGetOne);
 router.post('/:model',  bearerAuth, acl('create'), handleCreate);
-router.put('/:model/:id',  bearerAuth, acl('update')), handleUpdate;
-router.delete('/:model/:id', bearerAuth, acl('delete')), handleDelete;
+router.put('/:model/:id',  bearerAuth, acl('update'), handleUpdate);
+router.delete('/:model/:id', bearerAuth, acl('delete'), handleDelete);
 
 async function handleGetAll(req, res) {
   console.log('this is model:', req.model);
